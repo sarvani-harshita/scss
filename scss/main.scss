@@ -1,0 +1,27 @@
+
+    $primary-color: pink;
+    $font-weights:(
+        "regular":400,
+        "medium":500,
+        "bold":600,
+    );
+body{
+    background: $primary-color;
+    font-weight: map-get($font-weights , bold);
+   
+}
+.main{
+    p {
+        width:80%;
+        margin: 0 auto;
+    }
+    //  #{&} is used as interpolation to get add the css nesed from all parents.
+    // ex .main .mainPara
+    //if you dont want to nest use &Para
+    #{&}Para{
+        color: rgb(62, 132, 141);
+        &:hover{
+            color: rgb(200, 124, 223)
+        }
+    }
+   }

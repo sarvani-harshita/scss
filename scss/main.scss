@@ -1,10 +1,8 @@
 
-    $primary-color: pink;
-    $font-weights:(
-        "regular":400,
-        "medium":500,
-        "bold":600,
-    );
+@import './_reset';
+@import './variables';
+
+   
 body{
     background: $primary-color;
     font-weight: map-get($font-weights , bold);

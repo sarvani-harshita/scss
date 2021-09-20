@@ -7,16 +7,33 @@
 
 body {
   background: pink;
+  background-color: #575555;
+  color: #f4fbfc;
+}
+
+.main {
+  border: 2px dotted #ed4ef5;
+  border-radius: 5px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-weight: 600;
 }
 
-.main p {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .main .mainPara {
-  color: #3e848d;
+  font-weight: 400;
 }
 
 .main .mainPara:hover {

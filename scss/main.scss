@@ -2,22 +2,50 @@
 @import './_reset';
 @import './variables';
 
-   
+@function weight($weight-name)   {
+    @return map-get($font-weights , $weight-name )
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    width:80%;
+    margin: 0 auto;
+    flex-direction: $direction
+}
+
+@mixin theme($light-theme: true) {
+    @if $light-theme{
+        background-color: lavender;
+        color: rgb(62, 132, 141);
+
+    } 
+    @else {
+        background-color: rgb(87, 85, 85);
+        color: rgb(244, 251, 252);
+
+    }
+}
+
 body{
     background: $primary-color;
-    font-weight: map-get($font-weights , bold);
+    // font-weight: map-get($font-weights , bold);
    
+    @include theme(false);
+}
+%border{
+    border: 2px dotted #ed4ef5;
+    border-radius: 5px;
 }
 .main{
-    p {
-        width:80%;
-        margin: 0 auto;
-    }
+    @include flexCenter(row);
+    font-weight:weight(bold);
     //  #{&} is used as interpolation to get add the css nesed from all parents.
     // ex .main .mainPara
     //if you dont want to nest use &Para
+    @extend %border;
     #{&}Para{
-        color: rgb(62, 132, 141);
+        font-weight: weight(regular);
         &:hover{
             color: rgb(200, 124, 223)
         }
